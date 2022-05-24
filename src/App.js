@@ -12,7 +12,7 @@ function App() {
 
   const [text, setText] = useState('')
   const [editBody, setEditBody] = useState('')
-  const [listItem, setListItem] = useState();
+  const [listItem, setListItem] = useState([] || JSON.parse(localStorage.getItem('To-do')));
 
   const addItem = (item) => {
     const id = listItem?.length ? listItem[listItem.length - 1].id + 1 : 1;
