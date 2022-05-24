@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Content from "./components/Content"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
@@ -8,10 +8,10 @@ function App() {
 
   const [text, setText] = useState('')
   const [editBody, setEditBody] = useState('')
-  const [listItem, setListItem] = useState(JSON.parse(localStorage.getItem('To-do')));
+  const [listItem, setListItem] = useState(JSON.parse(localStorage.getItem('To-do'))||[]);
 
   const addItem = (item) => {
-    const id = (listItem ?? 1 ) || listItem[listItem.length - 1].id + 1 ;
+    const id = listItem.length ? listItem[listItem.length - 1].id + 1 : 1;
     const newItem = item;
 
     const newData = { id, newItem }
