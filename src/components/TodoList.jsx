@@ -4,9 +4,9 @@ const TodoList = ({ listItem, handleCheck, handleDelete, editBody, setEditBody, 
 
 
     return (
-        <div className="cardStyle">
+        <div className="row">
             {listItem?.length ? (
-                <>
+                <div className="col-12">
                     {listItem.map(item => (
                         <ListItem
                             key={item.id}
@@ -20,7 +20,7 @@ const TodoList = ({ listItem, handleCheck, handleDelete, editBody, setEditBody, 
                             setEditBody={setEditBody} />
                     ))
                     }
-                </>
+                </div>
             ) : (
                 <div className="row">
                     <div className="col-12">

@@ -63,11 +63,6 @@ footer{
   background-color: cyan;
 }
 
-#li__span{
-  flex-grow: 1;
-}
-
-
 input.search-bar{
 	border: none;
 	outline: none;
@@ -118,8 +113,7 @@ input.search-bar:focus{
 
 @media (max-width: 380px) {
   .square {
-    padding: 2rem 2rem;
-    margin: 1rem auto;
+    padding: 1rem;
   }
 }
 

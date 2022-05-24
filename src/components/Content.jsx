@@ -18,16 +18,18 @@ const Content = ({text, setText, handleSubmit, editBody, submitItem, setEditBody
                         setText={setText}
                         handleSubmit={handleSubmit}
                     />
-                    <TodoList
-                        submitItem={submitItem}
-                        text={text}
-                        editBody={editBody}
-                        setEditBody={setEditBody}
-                        listItem={listItem}
-                        handleCheck={handleCheck}
-                        handleDelete={handleDelete}
-                        handleEdit={handleEdit}
-                    />
+                    <div className="cardStyle">
+                        <TodoList
+                            submitItem={submitItem}
+                            text={text}
+                            editBody={editBody}
+                            setEditBody={setEditBody}
+                            listItem={listItem}
+                            handleCheck={handleCheck}
+                            handleDelete={handleDelete}
+                            handleEdit={handleEdit}
+                        />
+                    </div>
                 </div>
             </div>
         </div>
