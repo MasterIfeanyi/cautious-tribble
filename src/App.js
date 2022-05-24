@@ -6,10 +6,6 @@ import Footer from "./components/Footer"
 
 function App() {
 
-  useEffect(() => {
-    setListItem(JSON.parse(localStorage.getItem('To-do')))
-  }, [])
-
   const [text, setText] = useState('')
   const [editBody, setEditBody] = useState('')
   const [listItem, setListItem] = useState([] || JSON.parse(localStorage.getItem('To-do')));
@@ -27,7 +23,7 @@ function App() {
     localStorage.setItem('To-do', JSON.stringify(newList));
   }
 
-
+  // find to-do to edit
   const handleEdit = (id) => {
     const item = listItem.find(item => item.id === id)
     setEditBody(item.newItem);
@@ -39,6 +35,7 @@ function App() {
     localStorage.setItem('To-do', JSON.stringify(updatedItem));
   }
 
+  // create a new to-do
   const handleSubmit = (e) => {
     e.preventDefault();
     if(!text) return
@@ -52,6 +49,7 @@ function App() {
     localStorage.setItem('To-do', JSON.stringify(item))
   }
 
+  // delete to-do
   const handleDelete = (id) => {
     const items = listItem.filter(item => item.id !== id)
     setListItem(items)
