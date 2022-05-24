@@ -11,7 +11,7 @@ function App() {
   const [listItem, setListItem] = useState(JSON.parse(localStorage.getItem('To-do')));
 
   const addItem = (item) => {
-    const id = listItem.length ? listItem[listItem.length - 1].id + 1 : 1;
+    const id = listItem?.length ? listItem[listItem.length - 1].id + 1 : 1;
     const newItem = item;
 
     const newData = { id, newItem }
