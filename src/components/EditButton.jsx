@@ -44,7 +44,6 @@ const EditButton = ({ editBody, setEditBody, handleEdit, item, submitItem}) => {
                     </Button>
                 </Modal.Footer>
             </Modal>
-            
         </>
     )
 }
