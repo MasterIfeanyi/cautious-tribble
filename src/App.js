@@ -1,13 +1,14 @@
 import { useState } from 'react'
-import TodoForm from './TodoForm'
-import TodoList from './TodoList'
+import Content from "./components/Content"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
 
 
 function App() {
 
   const [text, setText] = useState('')
   const [editBody, setEditBody] = useState('')
-  const [listItem, setListItem] = useState([]||JSON.parse(localStorage.getItem('To-do')));
+  const [listItem, setListItem] = useState(JSON.parse(localStorage.getItem('To-do')));
 
   const addItem = (item) => {
     const id = listItem.length ? listItem[listItem.length - 1].id + 1 : 1;
@@ -56,23 +57,22 @@ function App() {
 
 
   return (
-
-    <div>
-      <TodoForm text={text}
-        setText={setText}
-        handleSubmit={handleSubmit} />
-      <TodoList
+    <main className="App">
+      <Header />
+      <Content 
         submitItem={submitItem}
         text={text}
-          editBody={editBody}
+        editBody={editBody}
         setEditBody={setEditBody}
         listItem={listItem}
         handleCheck={handleCheck}
         handleDelete={handleDelete}
-        handleEdit={handleEdit}  
+        handleEdit={handleEdit}
+        setText={setText}
+        handleSubmit={handleSubmit}
       />
-
-    </div>
+      <Footer />
+    </main>
   );
 }
 
