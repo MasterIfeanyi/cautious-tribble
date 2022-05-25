@@ -61,18 +61,20 @@ function App() {
   return (
     <main className="App">
       <Header />
-      <Content 
-        submitItem={submitItem}
-        text={text}
-        editBody={editBody}
-        setEditBody={setEditBody}
-        listItem={listItem}
-        handleCheck={handleCheck}
-        handleDelete={handleDelete}
-        handleEdit={handleEdit}
-        setText={setText}
-        handleSubmit={handleSubmit}
-      />
+      <section className="section">
+        <Content 
+          submitItem={submitItem}
+          text={text}
+          editBody={editBody}
+          setEditBody={setEditBody}
+          listItem={listItem}
+          handleCheck={handleCheck}
+          handleDelete={handleDelete}
+          handleEdit={handleEdit}
+          setText={setText}
+          handleSubmit={handleSubmit}
+        />
+      </section>
       <Footer />
     </main>
   );

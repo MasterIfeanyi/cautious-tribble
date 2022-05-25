@@ -4,36 +4,34 @@ import TodoList from "./TodoList"
 
 const Content = ({text, setText, handleSubmit, editBody, submitItem, setEditBody, listItem, handleCheck, handleDelete, handleEdit}) => {
   return (
-    <section className="section">
-        <div className="container">
-            <div className="row">
-                <div className="col-12 text-center my-3">
-                    <h1 className="h1">Add To-do</h1>
-                </div>
+    <div className="container">
+        <div className="row">
+            <div className="col-12 text-center my-3">
+                <h1 className="h1">Add To-do</h1>
             </div>
-            <div className="row d-flex justify-content-center">
-                <div className="col-lg-6">
-                    <TodoForm
+        </div>
+        <div className="row d-flex justify-content-center">
+            <div className="col-lg-6">
+                <TodoForm
+                    text={text}
+                    setText={setText}
+                    handleSubmit={handleSubmit}
+                />
+                <div className="cardStyle">
+                    <TodoList
+                        submitItem={submitItem}
                         text={text}
-                        setText={setText}
-                        handleSubmit={handleSubmit}
+                        editBody={editBody}
+                        setEditBody={setEditBody}
+                        listItem={listItem}
+                        handleCheck={handleCheck}
+                        handleDelete={handleDelete}
+                        handleEdit={handleEdit}
                     />
-                    <div className="cardStyle">
-                        <TodoList
-                            submitItem={submitItem}
-                            text={text}
-                            editBody={editBody}
-                            setEditBody={setEditBody}
-                            listItem={listItem}
-                            handleCheck={handleCheck}
-                            handleDelete={handleDelete}
-                            handleEdit={handleEdit}
-                        />
-                    </div>
                 </div>
             </div>
         </div>
-    </section>     
+    </div>      
   )
 }
 
